@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/angular.min.js"></script>
+    <link rel="icon" href="/icons/profile.svg">
+    <link rel="stylesheet" href="../style/style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="../style/_mouse.scss">
+    <title>ADEFISAYO'S Portfolio | Projects</title>
+</head>
+
+<body ng-app="">
+    <header class="main-head">
+        <nav>
+            <div class="logo">
+                <!-- <img src="../img/profile.jpg" alt="Coder" height="200PX" width="200PX"> -->
+                <h1>Adefisayo.dev</h1>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects/Functions.html">Projects</a></li>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="../Contacts/contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about">
+        <p style="font-size: large; font-weight: 200;">I am a front-end website developer with a strong focus on creating engaging and user-friendly digital experiences. With a deep understanding of web technologies and a keen eye for design, I specialize in crafting customized websites that cater to the unique needs and goals of my clients.</p><br>
+        <p style="font-size: large; font-weight: 200;">Driven by a love for problem-solving and a meticulous attention to detail, I have collaborated with diverse clients to bring their digital visions to life. From conceptualization to execution, I leverage my technical skills and industry best practices to deliver websites that not only look stunning but also provide seamless functionality.</p><br>
+        <p style="font-size: large; font-weight: 200;">Customer satisfaction is paramount to me. I prioritize effective communication, actively involving clients throughout the development process to ensure their requirements are met. I value collaboration, feedback, and continuous improvement to deliver websites that exceed expectations.</p><br>
+        <br>
+        <h1 style="margin-bottom: 10px; font-size: xx-large;"><b>Why Choose Me?</b></h1>
+        <p style="font-size: large; font-weight: 200;">- Expert Frontend Skills: I possess a deep understanding of HTML, CSS, and JavaScript, allowing me to build responsive and visually appealing websites that captivate your audience. <br> <br>
+            - User-Centric Design: I prioritize user experience, ensuring seamless navigation and intuitive interfaces that keep your visitors engaged and coming back for more. <br><br>
+            - Mobile-First Approach: I design websites that adapt flawlessly to various devices, ensuring a consistent and delightful experience on desktops, tablets, and smartphones. <br><br>
+            - Collaborative Partner: I value open communication and teamwork, working closely with clients to understand their needs and deliver tailor-made solutions.</p>
+            <br> <br>
+        <h1 style="margin-bottom: 10px; font-size: xx-large;"><b>How I Work</b></h1>
+        <p style="font-size: large; font-weight: 200;">1. Discovery: We start with a detailed discussion to understand your goals, brand, and target audience. <br><br>
+            2. Design & Development: I craft mockups and prototypes, and once approved, I bring the designs to life using the latest frontend technologies. <br><br>
+            3. Testing & Refinement: Rigorous testing ensures the website functions flawlessly, and I make necessary refinements for a polished final product.</p>
+    </div>
+    <div class="mouse-main-container">
+        <h1>This are my Favourite Images</h1>
+        <div class="mouse-cards">
+            <div class="cardm">
+                <div class="singlecard" ng-model="test" ng-class="{transformer:enter}" ng-init="tl=0"
+                    ng-mouseenter="enter=true ; tl=tl+1" ng-mouseleave="enter=false" ng-mousemove="count=count+1"
+                    ng-init="count=0">
+
+                    <img src="../img/image1.jpg" class="img1" alt="image1">
+                </div>
+                <div class="card-text">
+                    <h5>You have moved your cursor in the above image total of {{count}} px </h5>
+                    <h5>You have seen the above image 1 a total of {{tl}} times </h5>
+
+                </div>
+            </div>
+            <div class="cardm">
+                <div class="singlecard" ng-class="{transformer:ente}" ng-init="t2=0" ng-mouseenter="ente=true ; t2=t2+1"
+                    ng-mouseleave="ente=false" ng-mousemove="count1=count1+1" ng-init="count1=0">
+                    <img src="../img/image2.jpg" class="img2" alt="image2">
+                </div>
+                <div class="card-text">
+                    <h5>You have moved your cursor in the above image total of {{count1}} px </h5>
+                    <h5>You have seen the above image 2 a total of {{t2}} times </h5>
+                </div>
+            </div>
+            <div class="cardm">
+                <div class="singlecard" ng-class="{transformer:ent}" ng-init="t3=0" ng-mouseenter="ent=true ; t3=t3+1"
+                    ng-mouseleave="ent=false" ng-mousemove="count2=count2+1" ng-init="count2=0">
+                    <img src="../img/image3.jpg" class="img3" alt="image3">
+                </div>
+                <div class="card-text">
+                    <h5>You have moved your cursor in the above image total of {{count2}} px </h5>
+                    <h5>You have seen the above image 3 a total of {{t3}} times </h5>
+                </div>
+            </div>
+        </div>
+        <h2>What do you think is my favourite Image??</h2>
+        <div class="rad">
+            <div class="rad1">
+                <input type="radio" ng-model="myImg" value="my1">
+                <h3>Image 1</h3>
+            </div>
+            <div class="rad2">
+                <input type="radio" ng-model="myImg" value="my2">
+                <h3>Image 2</h3>
+            </div>
+            <div class="rad3">
+                <input type="radio" ng-model="myImg" value="my3">
+                <h3>Image 3</h3>
+            </div>
+        </div>
+        <div ng-if="myImg==='my2'">
+            <h2>Correct!! You guessed it right!!</h2>
+        </div>
+        <div ng-if="myImg==='my1' || myImg==='my3'">
+            <h2>Naah!! Not this one</h2>
+        </div>
+    </div>
+    <footer>
+        <h4> A D E L A K U N &nbsp;&nbsp;&nbsp; A D E F I S A Y O &copy; &nbsp;&nbsp;&nbsp; 2023</h4>
+        <ul>
+            <li>
+                <a href="https://wa.me/message/U3OFLPVEHVL6F1"><img src="../icons/icons8-whatsapp.svg"  style="height: 30px; width: 40px;" alt="WhatsApp"></a>
+            </li>
+            <li>
+                <a href="https://t.me/message/@adefisayo"><img src="../icons/icons8-telegram-logo-50.png" style="height: 30px; width: 30px;" alt="Telegram"></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/@inobeyourmate"><img src="../icons/twitter.svg" alt="twitter"></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/benisnotyormate/"><img src="../icons/instagram.svg" alt="insta"></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/adelakun.adefisayo"><img src="../icons/fb.svg" alt=""></a>
+            </li>
+        </ul>
+    </footer>
+
+    
+</body>
+</html>
